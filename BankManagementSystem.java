@@ -7,9 +7,9 @@ class InsufficientFundsException extends Exception{
     }
 }
 class Account{
-    private String accountNumber;
-    private String accountHolderName;
-    private double balance;
+    String accountNumber;
+    String accountHolderName;
+    double balance;
     public Account(String num,String name,double initialBalance) {
         this.accountNumber=num;
         this.accountHolderName=name;
@@ -28,11 +28,11 @@ class Account{
         target.deposit(amount);
     }
     public void displayAccountDetails(){
-        System.out.println("Acc:"+accountNumber+"Holder:"+accountHolderName+"Balance:$"+balance);
+        System.out.println("Acc:"+accountNumber+"Holder:"+accountHolderName+"Balance:"+balance);
     }
 }
 class Bank{
-    private List<Account> accounts=new ArrayList<>();
+    List<Account>accounts=new ArrayList<>();
     public void createAccount(String num,String name,double balance){
         accounts.add(new Account(num,name,balance));
     }
@@ -61,7 +61,7 @@ public class BankManagementSystem{
             myBank.displayAllAccounts();
             System.out.println("\nAttempting Overwithdrawal");
             john.withdraw(1000.0);
-        } catch (InsufficientFundsException e){
+        }catch(InsufficientFundsException e){
             System.err.println("Error:"+e.getMessage());
         }
     }

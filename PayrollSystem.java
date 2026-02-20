@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Employee{
-    private String employeeId, name, role;
-    private double baseSalary, currentSalary;
+    String employeeId, name, role;
+    double baseSalary, currentSalary;
     public Employee(String id,String name,String role,double base){
         this.employeeId=id;
         this.name=name;
@@ -27,7 +27,7 @@ class Employee{
     public String getEmployeeId(){return employeeId;}
 }
 class Payroll{
-    private List<Employee>employees=new ArrayList<>();
+    List<Employee>employees=new ArrayList<>();
     public void addEmployee(Employee e){employees.add(e);}
     public void calculateAllSalaries(){
         for(Employee e:employees){

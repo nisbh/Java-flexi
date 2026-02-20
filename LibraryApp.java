@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Book{
-    private String title;
-    private String author;
-    private String isbn;
-    public Book(String title,String author,String isbn) {
+    String title;
+    String author;
+    String isbn;
+    public Book(String title,String author,String isbn){
         this.title=title;
         this.author=author;
         this.isbn=isbn;
@@ -17,8 +17,7 @@ class Book{
     }
 }
 class Library{
-    private List<Book>books=new ArrayList<>();
-
+    List<Book>books=new ArrayList<>();
     public void addBook(Book book){
         books.add(book);
     }

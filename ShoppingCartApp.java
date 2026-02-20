@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Product {
-    private String name;
-    private double price;
+    String name;
+    double price;
     public Product(String name,double price){
         this.name=name;
         this.price=price;
@@ -12,16 +12,16 @@ class Product {
     public double getPrice(){return price;}
     @Override
     public String toString(){
-        return name+"($" + price + ")";
+        return name+"($"+price+")";
     }
 }
 class ShoppingCart{
-    private List<Product> products = new ArrayList<>();
+    List<Product>products=new ArrayList<>();
     public void addProduct(Product product){
         products.add(product);
     }
     public void removeProduct(String productName){
-        products.removeIf(p ->p.getName().equalsIgnoreCase(productName));
+        products.removeIf(p->p.getName().equalsIgnoreCase(productName));
     }
     public double calculateTotalCost(){
         double total=0;
